@@ -1,9 +1,5 @@
 # Diacritize
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/diacritize`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +18,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem allows us to take a string in English and then applies diacritical marks to the characters (when a suitable diacritical character is available).
+
+How can this be useful?  Perhaps you have some boring test data, and you'd like to shake things up a bit while at the same time keeping the strings "human readable".  Or maybe you have an application that seems to be working with standard characters, and you want to throw some of these weird ones at it.  Perhaps you just want to annoy your friends by diacritizing your email before you send it to them.
+
+
+```ruby
+  # Here are some examples!
+  require 'diacritize'
+
+  # The normal call gives the same result when called multiple times with the same input:
+  Diacritize::diacritize("It looks like we going to have a SUNNY DAY!")
+      # => "Ìt lòòks lìkè wè gòìñg tò hàvè à SÙÑÑÝ ÐÀÝ!"
+
+  # If there are no possible diacritical substitutes, then the output does not differ from the input:
+  Diacritize::diacritize("qwrtz")
+      # => "qwrtz"
+
+  # The random call will differ when called multiple times (it randomly chooses a substitute when many are available for a given character):
+  Diacritize::random_diacritize("It looks like we going to have a SUNNY DAY!")
+      # => "Ìt lôöks lîkë wë gøîñg tõ hàvé å SÜÑÑÝ ÐÅÝ!"
+      # => "Ît lõøks lîkê wé göîñg tó hávè à SÚÑÑÝ ÐÅÝ!"
+      # => etc...
+ 
+```
 
 ## Development
 
@@ -32,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/diacritize.
+Bug reports and pull requests are welcome on GitHub at https://github.com/C4mz0r/diacritize.
 
 
 ## License
