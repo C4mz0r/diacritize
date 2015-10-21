@@ -20,7 +20,7 @@ Or install it yourself as:
 
 This gem allows us to take a string in English and then applies diacritical marks to the characters (when a suitable diacritical character is available).
 
-How can this be useful?  Perhaps you have some boring test data, and you'd like to shake things up a bit while at the same time keeping the strings "human readable".  Or maybe you have an application that seems to be working with standard characters, and you want to throw some of these weird ones at it.  Perhaps you just want to annoy your friends by diacritizing your email before you send it to them.
+How can this be useful?  Perhaps you have some boring test data, and you'd like to shake things up a bit while at the same time keeping the strings "human readable".  Or maybe you have an application that seems to be working with standard characters, and you want to throw some of these different characters at it to see if it can handle them.  Perhaps you just want to annoy your friends by diacritizing your email before you send it to them.
 
 
 ```ruby
